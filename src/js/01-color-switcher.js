@@ -1,16 +1,16 @@
 const startRef = document.querySelector('button[data-start]');
 const stopRef = document.querySelector('button[data-stop]');
 const bodyRef = document.querySelector('body');
+let intervalId;
 
 stopRef.addEventListener('click', () => {
-    clearInterval(IntervalId);
+    clearInterval(intervalId);
     startRef.removeAttribute('disabled', false);
     stopRef.setAttribute('disabled', true);
-    console.log('Нажата стоп');
 })
 
 startRef.addEventListener('click', () => {
-    IntervalId = setInterval(() => {
+    intervalId = setInterval(() => {
         bodyRef.style.background = getRandomHexColor();
     }, 1000);
     startRef.setAttribute('disabled', true);

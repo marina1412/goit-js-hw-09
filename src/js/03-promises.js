@@ -25,6 +25,9 @@ formRef.addEventListener('submit', (evt) => {
 const amount = Number(amountRef.value);
 const delay = Number(firstDelayRef.value);
   let time = delay;
+  stepRef.value = "";
+  amountRef.value = "";
+  firstDelayRef.value = "";
   for (let i = 1; i <= amount; i += 1) {
     
       createPromise(i, time)
